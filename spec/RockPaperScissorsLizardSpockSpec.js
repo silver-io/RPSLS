@@ -4,6 +4,8 @@ describe('Rock Paper Scissors Lizard Spock', function() {
     rock = new Rock;
     paper = new Paper;
     scissors = new Scissors;
+    lizard = new Lizard;
+    spock = new Spock;
 
   });
 
@@ -11,16 +13,21 @@ describe('Rock Paper Scissors Lizard Spock', function() {
       it('Rock', function(){
         expect(rock.type).toEqual('Rock');
       });
+      it('Paper', function(){
+        expect(paper.type).toEqual('Paper')
+      });
       it('Scissors', function(){
         expect(scissors.type).toEqual('Scissors');
       });
-      it('Paper', function(){
-        expect(paper.type).toEqual('Paper')
+      it('Lizard', function(){
+        expect(lizard.type).toEqual('Lizard')
+      });
+      it('Spock', function(){
+        expect(spock.type).toEqual('Spock')
       });
   });
 
   describe('rules of the game', function() {
-
     beforeEach(function(){
       rules = new Rules;
     });
@@ -39,11 +46,15 @@ describe('Rock Paper Scissors Lizard Spock', function() {
         expect(rules.losingChoiceOf(rock, paper)).toEqual(rock);
       });
 
-      // it('loses to spock', function(){
-      //   rules = new Rules;
-      //   spock = new Spock;
-      //   expect(rules.winningChoiceOf(rock, spock)).toEqual(spock);
-      // });
+      it('loses to spock', function(){
+        rules = new Rules;
+        expect(rules.losingChoiceOf(rock, spock)).toEqual(rock);
+      });
+
+      it('Rock draws with Rock', function(){
+        draw = new Draw;
+        expect(rules.winningChoiceOf(rock, rock)).toEqual(draw);
+      });
 
     });
 
