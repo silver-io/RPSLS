@@ -7,10 +7,16 @@ describe('Rock Paper Scissors Lizard Spock', function() {
         rules = new Rules;
         rock = new Rock;
         scissors = new Scissors;
-
         expect(rules.winningChoiceOf(rock, scissors)).toEqual(rock);
-
       });
+
+      it(' beats lizard', function(){
+        rules = new Rules;
+        rock = new Rock;
+        lizard = new Lizard;
+        expect(rules.winningChoiceOf(rock, lizard)).toEqual(rock);
+      });
+
 
     });
 
