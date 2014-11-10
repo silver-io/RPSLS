@@ -56,6 +56,14 @@ describe('Rock Paper Scissors Lizard Spock', function() {
         expect(rules.winningChoiceOf(rock, rock)).toEqual(draw);
       });
 
+    describe('Paper', function(){
+      it('beats rock', function(){
+        expect(rules.winningChoiceOf(paper, rock)).toEqual(paper)
+
+      });
+
+    });
+
     });
 
   });

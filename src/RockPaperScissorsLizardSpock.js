@@ -22,6 +22,8 @@ Rules.prototype.winningChoiceOf =
       return new Draw;
     else if(choiceOne.type === 'Rock')
       return choiceOne;
+    else if(choiceOne.type === 'Paper')
+      return choiceOne;
     else
       return choiceTwo;
   }
